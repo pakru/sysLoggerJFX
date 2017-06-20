@@ -26,9 +26,11 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
+        System.exit(0);
+        /*
         if (Controller.sysLogServerThread != null) {
             Controller.sysLogServerThread.stop();  // TODO exit when in thread
-        }
+        } */
 
 
     }

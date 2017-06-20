@@ -15,7 +15,7 @@ public class UDPServer implements Runnable {
     private DatagramSocket socket;
     private int listenPort = 4445;
     private boolean running;
-    private byte[] buf = new byte[256];
+    private byte[] buf = new byte[1024];
     private recievedLogListener logListener;
 
     public void addSyslogMessageListener(recievedLogListener listener) {
@@ -36,7 +36,9 @@ public class UDPServer implements Runnable {
         while (true) {
             DatagramPacket packet = new DatagramPacket(buf,buf.length);
             try {
+                System.out.println("Trying to recieve packet");
                 socket.receive(packet);
+                System.out.println("Recieved packet");
             } catch (Exception e) {
                 System.out.println("Error!!! Exception: " + e.toString());
                 break;

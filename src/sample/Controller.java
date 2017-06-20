@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -15,6 +16,11 @@ public class Controller implements recievedLogListener {
     @Override
     public void onRecievedSyslogMessage(String syslogMessage) {
         loggerTextArea.appendText(syslogMessage + "\n");
+
+    }
+
+    @FXML protected void appQuit() {
+        System.exit(0);
 
     }
 
