@@ -24,6 +24,11 @@ public class Controller implements recievedLogListener {
 
     }
 
+    @FXML protected void openPreferences(){
+        Preferences preferences = new Preferences();
+        preferences.showDialog();
+    }
+
     @FXML protected void startSyslogServer() {
         //System.out.println("Stuff!");
         onRecievedSyslogMessage("Stuff!!!");

@@ -8,19 +8,21 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private static Stage mainStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("test.fxml"));
         //StackPane root = new StackPane();
-
+        mainStage = primaryStage;
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 700, 400));
         primaryStage.show();
         //Controller.sysLogServerThread.stop();
+    }
 
-
-
+    public static Stage getMainStage() {
+        return mainStage;
     }
 
     @Override
