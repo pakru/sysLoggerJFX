@@ -3,6 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
@@ -11,7 +12,7 @@ public class Controller implements recievedLogListener {
     public static Thread sysLogServerThread;
     @FXML private TextArea loggerTextArea;
     @FXML private ListView listOfConnections;
-
+    @FXML private Label stateLabel;
 
     @Override
     public void onRecievedSyslogMessage(String syslogMessage) {
@@ -38,6 +39,7 @@ public class Controller implements recievedLogListener {
             sysLogServer.addSyslogMessageListener(this);
             sysLogServerThread = new Thread(sysLogServer);
             sysLogServerThread.start();
+            stateLabel.setText(Main.RUNNING_STATE);
         } else {
             System.out.println("Already started");
         }

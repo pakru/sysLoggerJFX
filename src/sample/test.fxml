@@ -47,7 +47,7 @@
          <children>
             <TextArea fx:id="loggerTextArea" layoutX="208.0" prefHeight="330.0" prefWidth="432.0" editable="false" />
             <ListView fx:id="listOfConnections" prefHeight="330.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="344.0" text="Label" />
+            <Label fx:id="stateLabel" layoutX="14.0" layoutY="344.0" text="Syslog state: Not Running" />
             <Button layoutX="300" layoutY="344" text="Start" onAction="#startSyslogServer" />
          </children>
     </AnchorPane>
